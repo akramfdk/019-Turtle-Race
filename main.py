@@ -2,6 +2,7 @@ import turtle
 import random
 
 turtle.setworldcoordinates(0, 0, 100, 100)
+# turtle.setup(600, 500)
 
 NUM_TURTLES = 6
 
@@ -16,7 +17,7 @@ for index in range(NUM_TURTLES):
     pen.shape("turtle")
     pen.up()
     pen.color(colors[index])
-    pen.setpos(0, 20 + index * 10)
+    pen.setpos(3, 20 + index * 10)
     pen.speed("slow")
     turtles.append(pen)
 
@@ -27,7 +28,7 @@ def turtle_reaches_end():
         x_coordinates.append(t.xcor())
 
     max_x_val = max(x_coordinates)
-    if max_x_val >= 100:
+    if max_x_val >= 96:
         winner_index = x_coordinates.index(max_x_val)
         return winner_index
 
@@ -43,7 +44,7 @@ def race():
             turtles[ind].setx(turtles[ind].xcor() + random.randint(1, 3))
 
         victor = turtle_reaches_end()
-        if victor:
+        if victor is not None:
             continue_race = False
 
     return victor
