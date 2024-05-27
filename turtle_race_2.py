@@ -46,6 +46,6 @@ winning_turtle_color = colors[winning_turtle_index]
 if winning_turtle_color == user_bet:
     print(f"You win. The {winning_turtle_color} turtle wins!!")
 else:
-    print(f"You win. The {winning_turtle_color} turtle wins!!")
+    print(f"You lose. The {winning_turtle_color} turtle wins!!")
 
 screen.exitonclick()
